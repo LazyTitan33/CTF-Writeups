@@ -2,7 +2,7 @@
 
 The challenge gives you a tar file to download.
 
-Tar file which in turn gets unarchived to several layers and eventuall the flag is found in here.
+Tar file which in turn gets unarchived to several layers and eventually the flag is found in here.
 
 ![image](https://user-images.githubusercontent.com/80063008/136172921-c116b054-401d-4014-9ffa-8bc9100f4870.png)
 
