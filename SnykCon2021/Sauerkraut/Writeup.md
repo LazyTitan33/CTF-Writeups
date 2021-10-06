@@ -2,12 +2,11 @@
 
 Page opened to two simple boxes:
 
-
+![image](https://user-images.githubusercontent.com/80063008/136170679-cd9502f4-fbda-48cb-a3d2-973b85044d91.png)
 
 Entering random text gets me an error
 
-
-
+![image](https://user-images.githubusercontent.com/80063008/136170774-6e12ee62-2b02-478d-b882-5d864fb91848.png)
 
 While googling that I find it is given by a python module called Pickle. Which makes sense considering the title of the challenge references something else that's pickled. Googled around until I found a python script to help https://davidhamann.de/2020/04/05/exploiting-python-pickle/.
 
