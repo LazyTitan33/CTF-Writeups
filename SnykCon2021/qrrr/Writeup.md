@@ -11,7 +11,7 @@ QR-Code:5ff8d4e4958d8007a3897}
 
 Zbarimg sees the end of a potential flag given the curly brace.
 
-Put the the file into stegsolve.jar and navigated through the all the layers.
+Put the the file into stegsolve.jar and navigated through all the layers.
 
 Found another two qr codes:
 
