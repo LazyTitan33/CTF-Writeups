@@ -1,4 +1,4 @@
-Scored 5th/256 in GuidePoint Security October's CTF. It was loads of fun, I really hope to see some writeups of the challenges I haven't solved.
+Scored 5th/258 in GuidePoint Security October's CTF. It was loads of fun, I really hope to see some writeups of the challenges I haven't solved. If anyone has done `Best Foot Forward`, `Corona` or `ZipRecon`, please show me some writeup or tell me what the deal was with those. I got some parts of them, but didn't get to the finish line.
 
 Here are my writeups for the challenges I solved.
 
