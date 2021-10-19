@@ -28,7 +28,7 @@ Checking running processes, we can see netcatter being used to run something fro
 ![image](https://user-images.githubusercontent.com/80063008/137870896-79202880-2e70-443b-b89b-0600e9b1b6e4.png)
 
 
-I'm not great at decompilingg code but I think that while we have less then 5 arguments, it will replace the : with a space.
+I'm not great at decompiling code but I think that while we have less then 5 arguments, it will replace the : with a space.
 
 ![image](https://user-images.githubusercontent.com/80063008/137870913-903c27c0-7005-4cd0-9855-cd3af5ce2cd0.png)
 
