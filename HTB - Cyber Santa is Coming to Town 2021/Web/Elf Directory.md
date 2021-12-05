@@ -18,6 +18,8 @@ eyJ1c2VybmFtZSI6ImFkbWluIiwiYXBwcm92ZWQiOnRydWV9
 
 With some experimentation, we notice we also have Reflected XSS with the username field.
 
+![image](https://user-images.githubusercontent.com/80063008/144763572-2a1f3a93-36f9-4920-b5be-a874e80e18a9.png)
+
 XSS cookie
 
 eyJ1c2VybmFtZSI6IjxzY3JpcHQ+YWxlcnQoZG9jdW1lbnQuZG9tYWluKTwvc2NyaXB0PiIsImFwcHJvdmVkIjp0cnVlfQ==
