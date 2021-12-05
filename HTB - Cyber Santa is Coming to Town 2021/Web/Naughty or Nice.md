@@ -56,7 +56,7 @@ And we get our HMAC signature.
 
 cf14cfe167a94210316c1b82fa221b4284a2096f830ec70f45f78777de17b796
 
-Using python we can turn the HMAC signature from it's current ASCII hex state to JWT format. Basically base64 encode it to be safe for for url and take out the = in case one is there.
+Using python we can turn the HMAC signature from its current ASCII hex state to JWT format. Basically base64 encode it to be safe for url and take out the = in case one is there.
 
 ```bash
 python -c "exec(\"import base64, binascii\nprint base64.urlsafe_b64encode(binascii.a2b_hex('42890a49ab8265b03bf14acc5f9bdfb899a1b249a05fabc11fcc051330e98be5')).replace('=','')\")"
@@ -77,7 +77,7 @@ According to the source code, there is some nunjucks templating being used here.
 
 ![image](https://user-images.githubusercontent.com/80063008/144762986-bd8959a8-6939-48af-b9b9-92f9641546c9.png)
 
-We can try to confirm if we have SSTI (Server Side Template Injection) with a standard payload dof {{7*7}}
+We can try to confirm if we have SSTI (Server Side Template Injection) with a standard payload of {{7*7}}
 
 ![image](https://user-images.githubusercontent.com/80063008/144762963-f264e711-b729-4dde-a1ea-099645034b41.png)
 
