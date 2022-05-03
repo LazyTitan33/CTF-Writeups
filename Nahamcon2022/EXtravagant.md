@@ -12,13 +12,15 @@ And on the /view endpoint we can view the file we uploaded.
 
 ![image](https://user-images.githubusercontent.com/80063008/166220792-6c40e49a-50c3-47b4-8f1f-eeae545a3438.png)
 
-To make experimentation easier, I intercepted requests using Burpsuite.
-
-I first uploaded a standard XXE payload to read a file.
+To make experimentation easier, I intercepted requests using Burpsuite. I first uploaded a standard XXE payload to read a file.
 
 ![image](https://user-images.githubusercontent.com/80063008/166220858-55272441-120c-45d0-9418-9769ed09cf13.png)
 
-The request to view the file was successful and we have the passwd file. As the description states, the flag is in /var/www so we change our payload to read that file.
+The request to view the file was successful and we have the passwd file.
+
+![image](https://user-images.githubusercontent.com/80063008/166424810-1b1a2d2f-17cf-4b11-935f-ca4ed0f26f2e.png)
+
+As the description states, the flag is in /var/www so we change our payload to read that file.
 
 ![image](https://user-images.githubusercontent.com/80063008/166220991-a8abd195-24e5-446f-883d-5cacb8d3bf8e.png)
 
