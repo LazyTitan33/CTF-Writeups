@@ -4,7 +4,7 @@ After we download the file, we can read it and see a potential link in it.
 
 ![image](https://user-images.githubusercontent.com/80063008/166218543-ab1fd4b6-d3f0-4ee1-beaa-570e62463799.png)
 
-It seems to be rotated and after some experimentation, we can see that if we use caesar to rotate it 11 times, we get  proper link.
+It seems to be rotated and after some experimentation, we can see that if we use caesar to rotate it 11 times, we get a proper link.
 
 `cat theballoon|caesar 11`
 
