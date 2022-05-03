@@ -4,7 +4,7 @@ Runing the file command on this we can see it is an archive.
 
 ![image](https://user-images.githubusercontent.com/80063008/166225133-2598d379-7f3c-41d5-ad3a-fe987cfc556d.png)
 
-We unarchive it and get a few other files. The meta.json file contains a lot of data that we don't need to parse through. Doing a file on the .bin files only gives us data which doens't help. 
+We unarchive it and get a few other files. The meta.json file contains a lot of data that we don't need to parse through. Doing a file on the .bin files only gives us data which doesn't help. 
 
 ![image](https://user-images.githubusercontent.com/80063008/166225184-3f841175-89e2-4682-9a85-6d5ae3637191.png)
 
