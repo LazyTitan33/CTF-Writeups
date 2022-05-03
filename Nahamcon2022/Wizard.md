@@ -4,7 +4,7 @@ We are first asked to convert from binary to ASCII.
 
 ![image](https://user-images.githubusercontent.com/80063008/166420146-595c17e4-5c43-43df-89fa-b04dbc87d073.png)
 
-Then from ASCII to HEX
+Then from HEX to ASCII
 
 ![image](https://user-images.githubusercontent.com/80063008/166420176-7e54a20d-da7e-4ef7-8e97-39aa0a637bf5.png)
 
