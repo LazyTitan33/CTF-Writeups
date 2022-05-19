@@ -93,7 +93,7 @@ $DecryptedString|Write-Output
 ```
 I replaced the original IEX at the end with Write-Output. We don't want to execute the code, we just want to see its output.
 
-It has an encrypt function defined, as well as a function to decode from hex to binary. It uses a key to encrypt the properties of specific registry entries. We can dump the registry entries using `reglookup`
+It has an encrypt function defined, as well as a function to decode from hex to binary. It uses a key to encrypt the properties of specific registry entries. We can dump the registry entries using `reglookup`.
 
 ![image](https://user-images.githubusercontent.com/80063008/169349451-9ea9e6d0-b43f-4588-9023-c690af016f9a.png)
 
