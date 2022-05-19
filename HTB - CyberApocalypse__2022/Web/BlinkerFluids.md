@@ -16,8 +16,8 @@ https://github.com/simonhaenisch/md-to-pdf/issues/99
 ```
 ![image](https://user-images.githubusercontent.com/80063008/169334413-3cc0dea8-d5d7-4294-854f-145ca10e4ff6.png)
 
-And we get our flag.
-![image](https://user-images.githubusercontent.com/80063008/169335019-5a02ae5d-e6b6-46eb-82fb-3923e9564bdb.png)
+And we get our flag.  
+![image](https://user-images.githubusercontent.com/80063008/169335540-3e7d420e-bebf-479a-bf8e-e76148c8d477.png)
 ![image](https://user-images.githubusercontent.com/80063008/169335045-a7298c78-d263-4e82-bb7d-461b5484ba5a.png)
 
 HTB{bl1nk3r_flu1d_f0r_int3rG4l4c7iC_tr4v3ls}
