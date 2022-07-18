@@ -90,7 +90,7 @@ We can confirm they are still valid with kerbrute.
 
 ## ADCS exploit - PRIVESC ##
 
-Based on the name of the challenge and the fact that I saw this exploit mentioned on twitter pretty often recently, I researched for quite  abit. Then I followed this blogpost. This was after hours of going back and forth to a filebrowser.bat that the user had control over and WinPEAS told me that the administrator will run it when daniel logs in. Because of this I kept trying to forward port 5985 for WinRM but failed because of proper AV and firewall settings.
+Based on the name of the challenge and the fact that I saw this exploit mentioned on twitter pretty often recently, I researched for quite  abit. Then I followed the blogpost below. This was after hours of going back and forth to a filebrowser.bat that the user had control over and WinPEAS told me that the administrator will run it when daniel logs in. Because of this I kept trying to forward port 5985 for WinRM but failed because of proper AV and firewall settings.
 
 https://research.ifcr.dk/certifried-active-directory-domain-privilege-escalation-cve-2022-26923-9e098fe298f4
 
