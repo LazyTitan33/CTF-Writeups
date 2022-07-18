@@ -54,7 +54,7 @@ HTB{Zer0_DayZ_4Re_C0Ol_BuT_
 Now putting it all together, we get:
 
 ```bash
-HTB{Zer0_DayZ_4Re_C0Ol_BuT_b33n_pAtch
+HTB{Zer0_DayZ_4Re_C0Ol_BuT_F0llina_h4s_b33n_pAtch
 ```
 
 Obviously that's not the entire flag because the grammar doesn't match and we don't have the squigly bracket at the end. So we are missing something. Going back to part 3, based on the grammar we know we need an ed or 3d and we do see it. The squigly line is also there with an exclamation mark.
@@ -64,6 +64,6 @@ Obviously that's not the entire flag because the grammar doesn't match and we do
 Putting it all together again we get the proper flag. I'm sure there are better ways to do it, but in the rush of a CTF, that's what I managed.
 
 ```bash
-HTB{Zer0_DayZ_4Re_C0Ol_BuT_b33n_pAtch3d!}
+HTB{Zer0_DayZ_4Re_C0Ol_BuT_F0llina_h4s_b33n_pAtch3d!}
 ```
 
