@@ -57,7 +57,7 @@ Now putting it all together, we get:
 HTB{Zer0_DayZ_4Re_C0Ol_BuT_F0llina_h4s_b33n_pAtch
 ```
 
-Obviously that's not the entire flag because the grammar doesn't match and we don't have the squigly bracket at the end. So we are missing something. Going back to part 3, based on the grammar we know we need an ed or 3d and we do see it. The squigly line is also there with an exclamation mark.
+Obviously that's not the entire flag because the grammar isnt' correct and we don't have the squigly bracket at the end. So we are missing something. Going back to part 3, based on the grammar we know we need an ed or 3d and we do see it. The squigly line is also there with an exclamation mark.
 
 ![image](https://user-images.githubusercontent.com/80063008/179469133-038b446e-64d1-4512-a93f-0bfc0b84a536.png)
 
