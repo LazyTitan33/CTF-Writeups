@@ -1,4 +1,4 @@
-I participated in HackTheBox HackTheBoo Halloween CTF and ended up 175th. This individual CTF was very fun and had some great challenges that make for good writeups.
+I participated in HackTheBox HackTheBoo Halloween CTF and ended up 175th out of 6367. That's top 2.7%. This individual CTF was very fun and had some great challenges that make for good writeups.
 
 Here are my writeups for the challenges I solved.
 
