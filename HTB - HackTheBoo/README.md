@@ -2,4 +2,5 @@ I participated in HackTheBox HackTheBoo Halloween CTF and ended up 175th out of 
 
 Here are my writeups for the challenges I solved.
 
-![image](https://user-images.githubusercontent.com/80063008/198292019-49d008ff-4a4a-4536-8fc6-0ce8dabc969e.png)
+![image](https://user-images.githubusercontent.com/80063008/198292019-49d008ff-4a4a-4536-8fc6-0ce8dabc969e.png)![image](https://user-images.githubusercontent.com/80063008/198297472-0bcd7e04-d41f-4b0b-8233-bcd346e0d4e7.png)
+
