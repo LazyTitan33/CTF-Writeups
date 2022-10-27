@@ -1,0 +1,5 @@
+I participated in HackTheBox HackTheBoo Halloween CTF and ended up 175th. This individual CTF was very fun and had some great challenges that make for good writeups.
+
+Here are my writeups for the challenges I solved.
+
+![image](https://user-images.githubusercontent.com/80063008/198292019-49d008ff-4a4a-4536-8fc6-0ce8dabc969e.png)
