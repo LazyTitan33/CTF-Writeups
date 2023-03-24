@@ -1,4 +1,4 @@
-Snakecode![image](https://user-images.githubusercontent.com/80063008/169346071-99cdd7a1-6384-4c20-a548-c2ef4a94a955.png)
+Snakecode
 
 The most struggle I had with this one was getting a tool installed properly and working properly to decompile the .pyc file.
 
