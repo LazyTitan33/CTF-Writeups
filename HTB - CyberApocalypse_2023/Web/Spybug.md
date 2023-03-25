@@ -97,6 +97,8 @@ req2.send(response);
 ```
 <script src=\"/uploads/076095a0-7b50-4dac-b6eb-9900062c5c68\"></script>
 ```
+![image](https://user-images.githubusercontent.com/80063008/227714999-4e397b9f-cd17-4529-a17c-398886a98be8.png)
+
 After a short while, waiting for the bot eagerly, we get the flag:
 
 ![image](https://user-images.githubusercontent.com/80063008/227710858-fda45a4f-9f88-42e6-849c-149e25fc1eb5.png)
