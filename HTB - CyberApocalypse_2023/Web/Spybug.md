@@ -66,7 +66,7 @@ Let's take a closer look at that CSP.
 
 ![image](https://user-images.githubusercontent.com/80063008/227710634-fe67ad11-a1fa-4001-8a8b-a567b48de469.png)
 
-We have `script-src 'self'` but there's also `object-src 'none'`. After doing some research on various CSP bypasses, I found this very helfpul blog: https://bhavesh-thakur.medium.com/content-security-policy-csp-bypass-techniques-e3fa475bfe5d
+We have `script-src 'self'` but there's also `object-src 'none'`. After doing some research on various CSP bypasses, I found this very helpful blog: https://bhavesh-thakur.medium.com/content-security-policy-csp-bypass-techniques-e3fa475bfe5d
 
 This blog presents various scenarios, including Scenario 5 which seems very applicable to us:
 
