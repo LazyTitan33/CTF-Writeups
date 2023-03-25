@@ -2,9 +2,7 @@ When we connect to this service we have a system that allows us to create a conf
 
 ![image](https://user-images.githubusercontent.com/80063008/227539600-3c19ff02-4213-4c1d-9c75-b9d48dfad460.png)
 
-Creating a config gives us some serialized Base64 encoded data.
-
-Decoding the data, we notice it is python serialized data.
+Creating a config gives us some serialized Base64 encoded data. Decoding the data, we notice it is python serialized data.
 
 ![image](https://user-images.githubusercontent.com/80063008/227539798-c86c3c60-8531-4827-9d0a-fedd78e6ceb3.png)
 
