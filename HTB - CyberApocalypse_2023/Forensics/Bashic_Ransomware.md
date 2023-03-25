@@ -32,7 +32,7 @@ We open this up and clean up the naming convention to make it easier to read and
 
 ![image](https://user-images.githubusercontent.com/80063008/227515940-ea59b4f5-72fa-4fb4-8420-fcd98d69e47e.png)
 
-The attacker has defined a function which I called PublicKeyFunc that sets up a gpg public key. There is also a function meant to create the flag file we received. The important part to note in this function is that although the flag is encrypted with a 16 character passphrase that's passed in the bash terminal as an argument via the echo and `--passphrase-fd 0`
+The attacker has defined a function which I called PublicKeyFunc that sets up a gpg public key. There is also a function meant to create the flag file we received. The important part to note in this function is that although the flag is encrypted with a 16 character passphrase, that is passed in the bash terminal as an argument via the echo and `--passphrase-fd 0`
 
 ![image](https://user-images.githubusercontent.com/80063008/227517347-9a468cb2-d6c0-422b-8457-cdd9e4777269.png)
 
