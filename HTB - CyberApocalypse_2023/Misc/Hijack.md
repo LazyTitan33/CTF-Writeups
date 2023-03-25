@@ -32,7 +32,7 @@ deserialized_data = yaml.dump(Payload()) # serializing data
 print(base64.b64encode(deserialized_data.encode()).decode())
 ```
 
-This creates the Base64 encoded data I need to send. Once I do, I get the flag in my python listener:
+This creates the Base64 encoded data I need to send. Once I do, I get the flag in my netcat listener:
 
 ![image](https://user-images.githubusercontent.com/80063008/227540727-2217b1ae-01cf-47fe-957a-5fcf10a71b6c.png)
 
