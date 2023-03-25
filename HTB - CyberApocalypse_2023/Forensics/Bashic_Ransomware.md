@@ -4,7 +4,7 @@ We get the following files:
 
 ![image](https://user-images.githubusercontent.com/80063008/227514791-6eed696b-121d-4b16-8d61-fe56895e56b7.png)
 
-The flag encrypted in a file with a weird extension, a memory dump. a linux image json file that was zipped up and a wireshark capture.
+The flag encrypted in a file with a weird extension, a memory dump, a linux image json file that was zipped up and a wireshark capture.
 
 Thankfully, we only have one HTTP stream in the pcap file:
 
