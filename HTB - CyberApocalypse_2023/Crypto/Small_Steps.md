@@ -2,7 +2,7 @@ For the next challenge in the Crypto space, we can simply connect with netcat to
 
 ![image](https://user-images.githubusercontent.com/80063008/227491185-410343e3-4f62-4d43-8f2e-0a229424274a.png)
 
-This means we can use our good old friend, `RsaCtfTool.py` which you can get from here https://github.com/RsaCtfTool/RsaCtfTool. We can either leave it running and it will eventually spit out the flag.
+This means we can use our good old friend, `RsaCtfTool.py` which you can get from here https://github.com/RsaCtfTool/RsaCtfTool. We can leave it running and it will eventually spit out the flag.
 
 Please note that sagemath has to be installed for this attack to be done. You can simply to `sudo dnf install sagemath;pip install -r optional-requirements.txt` from the RsaCtfTool directory. If you get errors about building gmpy, do `sudo apt install libgmp3-dev` and try again. If you get error about sage binary not being installed, make sure to get it from here https://www.sagemath.org/download.html
 
