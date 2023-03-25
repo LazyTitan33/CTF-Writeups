@@ -17,7 +17,7 @@ echo -e "W1VuaXRdCkRlc2NyaXB0aW9uPUhUQnt0aDNzM180bDEzblNfNHIzX3MwMDAwMF9iNHMxY30
 systemctl enable service.service
 ```
 
-Decoding the base64 string, we get to see what servicec was used for persistence and get the flag:
+Decoding the base64 string, we get to see what service was used for persistence and get the flag:
 
 ![image](https://user-images.githubusercontent.com/80063008/227503042-68422073-2e97-41e5-b881-45d2b1287a31.png)
 
