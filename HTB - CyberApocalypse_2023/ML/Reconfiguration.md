@@ -10,7 +10,7 @@ We open these two files in the Orange software and connect the points to the Sca
 
 ![image](https://user-images.githubusercontent.com/80063008/227542162-08fa45d3-e066-4525-963b-2d8dc43f4b83.png)
 
-As soon as we do this, we get the flag. We just had to make sure that we expand the flag to get the text to be more readable.
+As soon as we do this, we get the flag. We just had to make sure that we expand the window to get the text to be more readable.
 
 ![image](https://user-images.githubusercontent.com/80063008/227541996-2f0b07d5-5901-426e-97b7-a10ce198d904.png)
 
