@@ -77,7 +77,7 @@ Now it all makes sense. We have unsanitized input in the /agents/details endpoin
 **Step 1**: Register a new agent to get identifier and token:
 ![image](https://user-images.githubusercontent.com/80063008/227710772-66c30cc6-9462-4a36-b512-1abcca1679a7.png)
 
-**Step 2**: Upload file with recording name in the form-data, .wav extension, audio/wave mimetype and the wav magic header anywhere in the file (it doesn't check for the magic bytes to be the first ones). I used // to comment it out in the javascript code so that javascript parsing won't error out. The javascript simply accessing the admin panel grabbing the response and sending it to our webhook.
+**Step 2**: Upload file with recording name in the form-data, .wav extension, audio/wave mimetype and the wav magic header anywhere in the file (it doesn't check for the magic bytes to be the first ones). I used // to comment it out in the javascript code so that javascript parsing won't error out. The javascript below is simply accessing the admin panel grabbing the response and sending it to our webhook.
 
 ```javascript
 var target = 'http://localhost:1337/panel';
