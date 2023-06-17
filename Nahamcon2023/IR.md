@@ -62,7 +62,7 @@ flag{892a8921517dcecf90685d478aedf5e2}
 
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/a13ab9bd-a79c-47a7-b85b-bfc2e0145abe)
 
-This was in the VirusTotal details as well:
+This was in the VirusTotal details as well so I got this before flag 3:
 
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/0e00d7da-14c5-4d5e-810d-6063f86f1d3b)
 
