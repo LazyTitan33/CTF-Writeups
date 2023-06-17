@@ -60,6 +60,22 @@ flag{892a8921517dcecf90685d478aedf5e2}
 
 # Flag 4
 
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/a13ab9bd-a79c-47a7-b85b-bfc2e0145abe)
+
+This was in the VirusTotal details as well:
+
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/0e00d7da-14c5-4d5e-810d-6063f86f1d3b)
+
+We just needed to generate the MD5 sum. We use `-n` with echo to remove the newline otherwise we get an incorrect hash.
+
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/501d152f-a7c8-449d-ac87-1ba26ab88e92)
+
+flag{32c53185c3448169bae4dc894688d564}
+
+# Flag 5
+
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/fd759535-353e-498a-946a-8ffbffef441d)
+
 I put this together after some trial and error together with ChatGPT:
 
 ```powershell
