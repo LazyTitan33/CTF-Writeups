@@ -6,7 +6,7 @@ For this forensics challenge, we get the following files.
 
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/3acc4b16-989d-4e3c-a5ad-858b0703cb8b)
 
-Running strings on the shortcut file we can see powershell being used:
+Running strings on the shortcut file we can see powershell being used:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/d1938cb0-01c6-45a2-b983-c77016102956)
 
 The invoice.vbs file contains what we would expect, obfuscated malicious code.
