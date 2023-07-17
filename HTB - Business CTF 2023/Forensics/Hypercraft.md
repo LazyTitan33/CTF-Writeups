@@ -45,7 +45,7 @@ I put them all together and decoded them in Cyberchef to find a Powershell comma
 
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/f34d62bc-b8e5-413c-bdc7-9bedf86ca9bc)
 
-It was piping everything to IEX to detonate so I replaced IEX with a harmless `echo` and ran it which revealed yet another stage. I lost track of stages at this point.
+It was piping everything to IEX to detonate so I replaced IEX with a harmless `echo` and ran it which revealed yet another stage. I lost track of stages at this point.  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/2f31429f-0a28-428a-9c4e-3f9500802dba)
 
 I stared at this code for a while trying to understand it. A closer look shows that it is doing some XOR operations on some HEX bytes:
