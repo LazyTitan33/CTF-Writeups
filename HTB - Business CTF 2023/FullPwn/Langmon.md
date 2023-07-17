@@ -20,7 +20,7 @@ After a short while, the scanner finds that `php-everywhere` is a vulnerable plu
 
 After a bit of research, we find this youtube video clearly showing the way to trigger code execution.
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/NJl64f9Ohp8/0.jpg)](http://www.youtube.com/watch?v=NJl64f9Ohp8 "PHP Everywhere RCE"){:target="_blank" rel="noopener"}
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/NJl64f9Ohp8/0.jpg)](http://www.youtube.com/watch?v=NJl64f9Ohp8 "PHP Everywhere RCE")
 
 We just follow that video creating a post with a php block in it and get a reverse shell:
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/1da1fe84-b4a4-4151-9a02-d86263280d24)
