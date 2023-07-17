@@ -1,7 +1,7 @@
 ### Challenge description
 Cloud challenges don't have a description. We just get an IP address and are supposed to get the flag.
 
-A port scan reveals only port 22 and 80 open.
+A port scan reveals only port 22 and 80 open.  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/b6ad51fc-cc3f-4c43-a142-ddf9c8d2cfab)
 
 A good looking website that doesn't seem to do anything:
