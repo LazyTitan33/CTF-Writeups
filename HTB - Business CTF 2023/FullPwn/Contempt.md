@@ -115,6 +115,7 @@ Curiously, we can't find the user flag anywhere via the shell we have. I wanted 
 ```powershell
 shell powershell -command "ls -fo -r \ -erroraction silentlycontinue | sls -pattern 'HTB{' -erroraction silentlycontinue"
 ```
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/69af9436-0123-4618-9471-06a014d06bd1)
 
 After a while, we get the user flag out of a .vhdx file:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/89843c7b-8dfd-4f6f-bfc0-7c31264f29d6)
