@@ -18,7 +18,7 @@ There are some well-known exploits for yaml deserialization, including for snake
 I tested the payload from the blog trying to get a callback to myself:
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/8eff38ef-a129-4c0b-96cd-0e15b5cec67d)
 
-Even though it says that "an error occured", we do get a callback:
+Even though it says that "an error occured", we do get a callback:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/748899c8-d335-4585-b2a6-e07b35b3219c)
 
 In this case all we need is to setup our files in the correct folders and with the correct names.
