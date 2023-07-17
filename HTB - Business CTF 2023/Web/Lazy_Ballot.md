@@ -6,7 +6,7 @@ This is the first challenge in the Web category and we get the source code.
 The first page greets us with a SF looking picture and subject:
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/45466d64-111a-453e-834a-5af3be38c0ca)
 
-We even have a login page on /login:
+We even have a login page on /login:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/938b26f5-f015-44f5-b563-6ef7f4933348)
 
 Going to the source code, from the `database.js` file we can see that the flag is read into the Database:
