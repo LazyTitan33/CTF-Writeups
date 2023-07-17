@@ -75,10 +75,10 @@ receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
 signed = unknown_contract.functions.signed().call()
 print(f"signed: {signed}")
 ```
-We successfully sign the contract:
+We successfully sign the contract:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/47275b1b-1f1c-4bd0-9688-b2d45123a6a1)
 
-Connect back and get the flag:
+Connect back and get the flag:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/d28db0e1-cf68-456e-9569-a73358d31e4e)
 
 HTB{c0n9247u14710n5_y0u_423_kn0w_p427_0f_7h3_734m}
