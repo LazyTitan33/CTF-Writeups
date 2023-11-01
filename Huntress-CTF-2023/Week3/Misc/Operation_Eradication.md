@@ -7,7 +7,7 @@
 The provided file looks like a configuration file:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/1dd6c000-bb6e-4060-ab31-841092487e30)
 
-We start by googling around to see if we can find what is a configuration file for:  
+We start by googling around to see if we can find what it is a configuration file for:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/fba257f6-9548-428e-b5d0-9d4ed340c0d0)
 
 The first search result mentiones exactly the documentation that we need. It seems it is a configuration file for `rclone:`
