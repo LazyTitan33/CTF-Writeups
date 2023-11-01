@@ -37,7 +37,7 @@ We highlight this part and click on the icon in Ghidra to Display the Script Man
 
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/50ee0bf7-9514-4570-a7c2-6a27baedd457)
 
-We find our ![SavePatch.py](https://github.com/schlafwandler/ghidra_SavePatch/blob/master/SavePatch.py) script and run it. Because we've highlighted our patched instruction, it automatically determines the size and location it needs to patch.  
+We find our [SavePatch.py](https://github.com/schlafwandler/ghidra_SavePatch/blob/master/SavePatch.py) script and run it. Because we've highlighted our patched instruction, it automatically determines the size and location it needs to patch.  
 
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/7fcca990-fe57-4b6b-ba10-c5bee9293f49)
 

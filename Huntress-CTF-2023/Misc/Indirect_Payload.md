@@ -25,7 +25,7 @@ And an `a`:
 And a `g`:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/909d969f-f0f9-478f-97d3-e0771481403f)
 
-These are not consecutive. There are some empty redirects in between so we can't simply click through and transcribe the flag. Or we could, but we can think of an easier way. Let's use `wget` to follow a lot of requests and get a detailed body into an output.txt file:
+These are not consecutive. There are some empty redirects in between so we can't simply click through and transcribe the flag. Or we could, but we can think of an easier way. Let's use `wget` to follow a lot of requests and get a detailed body into an output.txt file. The important part here is the `-debug` flag so that we can actually see the output of the redirects when there is one:
 
 ```bash
 wget --debug --max-redirect=150 http://chal.ctf.games:31453/site/flag.php -o output.txt
