@@ -78,25 +78,25 @@ s.close()
 nc.close()
 ```
 Once inside the machine, we start ennumerating (a lot) and soon-ish find a password in /var/etc/umconfig.txt:  
-![image](https://github.com/LazyTitan33/myCreations/assets/80063008/74c54aef-e394-45e7-a3fe-b3517e1de252)
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292659845-74c54aef-e394-45e7-a3fe-b3517e1de252.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091235Z&X-Amz-Expires=300&X-Amz-Signature=486e4cb500d84b45949b6e48dabbd390ee9344ac394c342b8d00dd0522633a49&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
 
 Y3tiStarCur!ouspassword=admin
 
 We can use these creds to login the camera dashboard and see the first flag:  
-![image](https://github.com/LazyTitan33/myCreations/assets/80063008/1bfd121c-5fff-431b-8ab9-dffc5f6bdd15)
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292659878-1bfd121c-5fff-431b-8ab9-dffc5f6bdd15.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091521Z&X-Amz-Expires=300&X-Amz-Signature=31217c2fa156ef311c49f47a64d4378841935920284c7c1810de05eaa2a077fd&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
 
 `THM{YETI_ON_SCREEN_ELUSIVE_CAMERA_STAR}`
 
 ## 2. What is the content of the yetikey2.txt file?
 
 Going back on port 8080, we find a seemingly unaccesable page:  
-![image](https://github.com/LazyTitan33/myCreations/assets/80063008/c4f867a8-4339-4b87-9337-dfc3ffb3880e)
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292659995-c4f867a8-4339-4b87-9337-dfc3ffb3880e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091542Z&X-Amz-Expires=300&X-Amz-Signature=04a3b9e14dcf67293e0e95fb133be9bbf5ab56f2a009c5f757433c535a3f1826&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
 
 However, if we use `ffuf` to fuzz for files with any of the raft wordlists from seclists, but also add another slash at the end, we find that the login page is accessible:  
-![image](https://github.com/LazyTitan33/myCreations/assets/80063008/00ca1ea3-41c6-4417-9c45-54cb819365bc)
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292660022-00ca1ea3-41c6-4417-9c45-54cb819365bc.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091603Z&X-Amz-Expires=300&X-Amz-Signature=5921b1d41db392f4acdcd7f459e50012c551e5d6327efde83f5c0703eef49730&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
 
 Multiple different attempts were made to bypass the login and then we noticed this error which confirms a NoSQL database being used in the background:  
-![image](https://github.com/LazyTitan33/myCreations/assets/80063008/54053351-d2cb-4d46-9549-0b93131a564e)
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292660048-54053351-d2cb-4d46-9549-0b93131a564e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091616Z&X-Amz-Expires=300&X-Amz-Signature=5bbb9e9d5ffd3bd7da5c4d71a87412a55310d8063e5016050b36e98e76b517df&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
 
 I grabbed [this](https://book.hacktricks.xyz/pentesting-web/nosql-injection#brute-force-login-usernames-and-passwords-from-post-login) script from hacktricks and modified it a bit to start enumerating. As you can see from the commented code, I enumerated users first based on the number of characters in the password.
 
@@ -157,6 +157,6 @@ After finding the usernames, the script automatically starts abusing the NoSQL i
 `Frosteau:HoHoHacked`
 
 Using these credentials to login, we get redirects to the root website which again, tells us that we are forbidden. However, we need to keep in mind the slash trick at the end, which is a misconfiguration in the apache server. Adding the slash at the end of /index.php/ we get directed to the dashboard which has the content of the yetikey2.txt:  
-![image](https://github.com/LazyTitan33/myCreations/assets/80063008/3779b5f7-6659-4ff0-bccb-e5daaa66c6d7)
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292660268-3779b5f7-6659-4ff0-bccb-e5daaa66c6d7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091628Z&X-Amz-Expires=300&X-Amz-Signature=d42f9e7baa746b5ea50ffe282a4b0be3ba0aec3e4e8cd2748bdd07e84cfcd118&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
 
 `2-K@bWJ5oHFCR8o%whAvK5qw8Sp$5qf!nCqGM3ksaK`
