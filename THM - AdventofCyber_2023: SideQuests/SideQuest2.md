@@ -77,13 +77,13 @@ nc.interactive()
 s.close()
 nc.close()
 ```
-Once inside the machine, we start ennumerating (a lot) and soon-ish find a password in /var/etc/umconfig.txt:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292659845-74c54aef-e394-45e7-a3fe-b3517e1de252.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091235Z&X-Amz-Expires=300&X-Amz-Signature=486e4cb500d84b45949b6e48dabbd390ee9344ac394c342b8d00dd0522633a49&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+Once inside the machine, we start enumerating (a lot) and soon-ish find a password in /var/etc/umconfig.txt:  
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/b1ed27fe-8d2d-4329-adfa-89af01abea8b)
 
 Y3tiStarCur!ouspassword=admin
 
 We can use these creds to login the camera dashboard and see the first flag:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292659878-1bfd121c-5fff-431b-8ab9-dffc5f6bdd15.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091521Z&X-Amz-Expires=300&X-Amz-Signature=31217c2fa156ef311c49f47a64d4378841935920284c7c1810de05eaa2a077fd&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/5abfaf94-19f7-4bdd-b4ea-dea68f2f59fa)
 
 `THM{YETI_ON_SCREEN_ELUSIVE_CAMERA_STAR}`
 
