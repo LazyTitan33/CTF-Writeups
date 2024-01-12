@@ -1,4 +1,4 @@
-![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/3725b9df-5840-44a1-907d-719b752b9585)# The Bandit Surfer
+# The Bandit Surfer
 
 This SideQuest can be found here: https://tryhackme.com/jr/surfingyetiiscomingtotown
 
