@@ -5,21 +5,18 @@ This SideQuest can be found here: https://tryhackme.com/jr/surfingyetiiscomingto
 ## 1. What is the user flag?
 
 Starting with a port scan, we find port 22 and 8000 open:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292662785-95a94bb0-2d32-40a8-83f2-82d1b3447de3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092115Z&X-Amz-Expires=300&X-Amz-Signature=8cccfd3f81e5e393e2789b37c2f150b484f799aa808dacb484cc7f79c79fa75f&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/fb5c7f66-bf37-4905-ab56-4b3eacb119c5)
 
 On port 8000 we get a very cute looking website from which we can download images:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292662800-d26846b7-2b5b-41bf-b39f-962c4de27862.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092122Z&X-Amz-Expires=300&X-Amz-Signature=77a9f335d3349e1fc6de33099085802d45b56fca2d9b8fad8a20324d47645b51&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/20512077-32e6-4388-874e-09664b847392)
 
 This is done by passing an integer in the id parameter on the /download endpoint. Also, in the response we can see this is a Werkzeug website:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292662811-9b0c0432-6b35-4784-bceb-7f877a659274.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092132Z&X-Amz-Expires=300&X-Amz-Signature=71e69067229349e2e9bf0339fcf8bee5252ac16f4772f32a1e2ea06e861278e2&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/93782af0-ea7e-4652-abd5-ca584b04e107)
 
 We see that the /console is accessible so Debug is enabled:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292662843-005e964b-ca51-4bfe-a76d-1c45fc9d3859.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092141Z&X-Amz-Expires=300&X-Amz-Signature=409abe293130e4d32f356356666a581a0160e6e43b7d36db0505910409e8e833&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/513a13b2-2b7a-46ec-ad4f-e157ebb8425e)
 
-Including a single quote in the id parameter outputs a MySQL error which indicates the possibility of some SQL injection:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292662899-d651479b-f197-4fac-820f-2be355d7e49b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092150Z&X-Amz-Expires=300&X-Amz-Signature=07026b73edb96493a84e787ac7fa5e564e6e47aeb8f36449dffd548e88f3f944&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
-
-Because Debug is on and the error output is verbose, we can also see the location where the application is running from:  
+Including a single quote in the id parameter outputs a MySQL error which indicates the possibility of some SQL injection. Because Debug is on and the error output is verbose, we can also see the location where the application is running from:  
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292662920-6d86c149-a6c2-4ca3-a656-2bfb6ddb4e58.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092159Z&X-Amz-Expires=300&X-Amz-Signature=bbd2cc5fcbae8e0df32e9e9b1cc6661190354f572dac63305738880c7efd2255&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
 
 Dumping the database with SQLMap doesn't yield anything useful:  
