@@ -90,13 +90,13 @@ We can use these creds to login the camera dashboard and see the first flag:
 ## 2. What is the content of the yetikey2.txt file?
 
 Going back on port 8080, we find a seemingly unaccesable page:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292659995-c4f867a8-4339-4b87-9337-dfc3ffb3880e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091542Z&X-Amz-Expires=300&X-Amz-Signature=04a3b9e14dcf67293e0e95fb133be9bbf5ab56f2a009c5f757433c535a3f1826&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/2432afa3-5e4f-460b-9146-83cc57c112e3)
 
 However, if we use `ffuf` to fuzz for files with any of the raft wordlists from seclists, but also add another slash at the end, we find that the login page is accessible:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292660022-00ca1ea3-41c6-4417-9c45-54cb819365bc.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091603Z&X-Amz-Expires=300&X-Amz-Signature=5921b1d41db392f4acdcd7f459e50012c551e5d6327efde83f5c0703eef49730&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/efdbb0b7-6345-4556-a1de-974da9b9969a)
 
 Multiple different attempts were made to bypass the login and then we noticed this error which confirms a NoSQL database being used in the background:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292660048-54053351-d2cb-4d46-9549-0b93131a564e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091616Z&X-Amz-Expires=300&X-Amz-Signature=5bbb9e9d5ffd3bd7da5c4d71a87412a55310d8063e5016050b36e98e76b517df&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/aca6f8da-edda-4f32-a61d-db2c1ea1a2fe)
 
 I grabbed [this](https://book.hacktricks.xyz/pentesting-web/nosql-injection#brute-force-login-usernames-and-passwords-from-post-login) script from hacktricks and modified it a bit to start enumerating. As you can see from the commented code, I enumerated users first based on the number of characters in the password.
 
@@ -157,6 +157,6 @@ After finding the usernames, the script automatically starts abusing the NoSQL i
 `Frosteau:HoHoHacked`
 
 Using these credentials to login, we get redirects to the root website which again, tells us that we are forbidden. However, we need to keep in mind the slash trick at the end, which is a misconfiguration in the apache server. Adding the slash at the end of /index.php/ we get directed to the dashboard which has the content of the yetikey2.txt:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292660268-3779b5f7-6659-4ff0-bccb-e5daaa66c6d7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T091628Z&X-Amz-Expires=300&X-Amz-Signature=d42f9e7baa746b5ea50ffe282a4b0be3ba0aec3e4e8cd2748bdd07e84cfcd118&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/e1fb7ed1-4e8c-47b6-981e-fd62e3714c7f)
 
 `2-K@bWJ5oHFCR8o%whAvK5qw8Sp$5qf!nCqGM3ksaK`
