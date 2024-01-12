@@ -1,4 +1,4 @@
-# The Bandit Surfer
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/3725b9df-5840-44a1-907d-719b752b9585)# The Bandit Surfer
 
 This SideQuest can be found here: https://tryhackme.com/jr/surfingyetiiscomingtotown
 
@@ -16,23 +16,19 @@ This is done by passing an integer in the id parameter on the /download endpoint
 We see that the /console is accessible so Debug is enabled:  
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/513a13b2-2b7a-46ec-ad4f-e157ebb8425e)
 
-Including a single quote in the id parameter outputs a MySQL error which indicates the possibility of some SQL injection. Because Debug is on and the error output is verbose, we can also see the location where the application is running from:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292662920-6d86c149-a6c2-4ca3-a656-2bfb6ddb4e58.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092159Z&X-Amz-Expires=300&X-Amz-Signature=bbd2cc5fcbae8e0df32e9e9b1cc6661190354f572dac63305738880c7efd2255&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+Including a single quote in the id parameter outputs a MySQL error which indicates the possibility of some SQL injection. Because Debug is on and the error output is verbose, we can also see the location where the application is running from:  `/home/mcskidy/app/app.py`
 
-Dumping the database with SQLMap doesn't yield anything useful:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292662945-5029a8cb-5d0d-4720-b5ae-01bfd6d1c36f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092208Z&X-Amz-Expires=300&X-Amz-Signature=0c7b37740af69b11f606ce1de06b1b58eb37ca7fa128323736eb7eba94bffaa3&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+Dumping the database with SQLMap doesn't yield anything useful.
 
 However, manual checks seem to indicate that whatever output our SQL injection does, is passed to pycurl and trying to be accessed:  
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292662965-ccb6f155-2b09-4e7f-aa2e-75f1cb2b5ab6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092218Z&X-Amz-Expires=300&X-Amz-Signature=59580f881264d63125410357ebdaef9c5b8b3e82ed4832b31e3f3f39feb66ed5&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/720b4c31-71ac-4666-84d4-9b0a80eafc7e)
 
-Because the version of the database from the picture above isn't a valid host, of course the error indicates that. But this means that we should be able to get the curl to access something we want thus combining the SQLi with an SSRF. A MySQL statement that we can use to output specific text would be this:  
+Because the version of the database isn't a valid host, of course the error indicates that. But this means that we should be able to get the curl to access something we want thus combining the SQLi with an SSRF. A MySQL statement that we can use to output specific text would be this:  
 
 ```sql
 'UNION SELECT 'file:///etc/passwd' AS output_text;-- -
 ```
-
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292663077-13c6849e-b5e2-439a-8978-604492500a93.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092225Z&X-Amz-Expires=300&X-Amz-Signature=ec18f5ced7c35fba54e9a0bc97bbefcd567eb4bd8fe58b6aa4df3cd03945f084&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
 
 This way we have confirmed that we can abuse the SQLi to get SSRF and read files. As it is already [known](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/werkzeug), if Debug is enabled and the /console is accessible, and you have a way to read files from the host, you could generate the required PIN and then execute python code. I have developed this script to get me a foothold directly:  
 
@@ -150,9 +146,7 @@ except:
         print('failed to generate correct PIN, reset machine')
 ```
 After we run the script with the IP of the generated machine, we easily get an SSH connection to the mcskidy user and get the first flag:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292663202-faaf3dd2-92df-4437-afd2-76b7a4262810.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092238Z&X-Amz-Expires=300&X-Amz-Signature=1c406c33f66d15ae8954ac2130716b2e80788f820880612638f267de8f523273&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
-
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292663212-803694dc-ee34-4612-bf41-cfc987c056a4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092245Z&X-Amz-Expires=300&X-Amz-Signature=a97805b73e0605f14ea10158161355dfc74a75132e801416411e2e54c2ea04d5&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/403503dd-4582-48a1-a56d-0401b50a1562)
 
 `THM{SQli_SsRF_2_WeRkZeuG_PiN_ExPloit}`
 
@@ -266,15 +260,15 @@ t2.start()
 ## 2. What is the root flag?
 
 Another enumeration phase begins so we first look at the app and see what we can learn from it. Going into the app directory, we find that it contains a git repo:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292663243-236794e5-e776-4f1c-b699-d64e3d0a2b60.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092257Z&X-Amz-Expires=300&X-Amz-Signature=c4e7f969c9a1b06df1b2e95fa44d1ef003a9069aa8d531e3da043efef16261d4&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/4a4874e4-1067-487b-a1f5-1ff59b161d1d)
 
 Enumerating the git commits, we find a password in one of them which works for our user:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292663251-753e0caf-728d-42f5-8562-f27b0ee64f8e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092313Z&X-Amz-Expires=300&X-Amz-Signature=70adf71ebdde3f5c1e957e6cfe8d115d9f597b77b163d17d44ed74ec3b63b836&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/4c913116-c89c-429a-b75d-96e5a01762c7)
 
 `F453TgvhALjZ`
 
 Checking the sudo privileges now that we have the password, we find that the user can run a specific bash script as root:  
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292663281-b5c68fb3-827a-4c69-a4dd-4df60adae238.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092324Z&X-Amz-Expires=300&X-Amz-Signature=d56d580f5eb98ca6c3b6f0ad7cc7bead6c1cd57e5c616b309a27d3c4dd37a850&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/bc012048-9821-43f4-bb2d-42b24d828f87)
 
 This is the content of said script:  
 
@@ -306,7 +300,7 @@ export PATH=/home/mcskidy/:$PATH
 
 My python foothold script already writes an SSH key into McSkidy's folder, so I just copy that into the root folder. After disabling the "[" as builtin, we create a file with our privilege escalation vector and make it executable and make sure our PATH includes the location where we have it. Then we run the /opt/check.sh as root and SSH in.  
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/80063008/292663513-1cd68f60-76c2-4536-9be2-bed3983ecd40.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T092336Z&X-Amz-Expires=300&X-Amz-Signature=2b7395ee69aa2f534b583a09c8eb442610ea0fb0fddf93d960e643803d6f3665&X-Amz-SignedHeaders=host&actor_id=80063008&key_id=0&repo_id=600841946)
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/461c6603-742b-40d0-b761-ce073a80079e)
 
 `THM{BaNDiT_YeTi_Lik3s_PATH_HijacKing}`
 
