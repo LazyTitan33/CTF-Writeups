@@ -23,7 +23,7 @@ Getting code execution isn't too difficult, a quick google search gives us the f
 [https://antgarsil.github.io/posts/velocity/](https://antgarsil.github.io/posts/velocity/)  
 But we can find the same payload on [Hacktricks](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#velocity-java) as well.
 
-However, both payloads needs to be adjusted a bit because they don't seem to work out of the box. After a bit of back and forth with ChatGPT, we can reach this payload to get code execution:  
+However, both payloads needs to be adjusted a bit because they don't seem to work out of the box. This payload from this [blog](https://gosecure.github.io/template-injection-workshop/#6) helped me refine the one below:  
 
 ```
 #set($x='')
