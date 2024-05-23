@@ -63,8 +63,7 @@ bytes_data = bytes(data)
 with open('output_file.bin', 'wb') as f:
     f.write(bytes_data)
 ```
-
-After a bit of waiting it would seem we downloaded a firmware image:  
+This was very similar with the [Rids](https://github.com/LazyTitan33/CTF-Writeups/blob/main/HTB%20-%20CyberApocalypse_2024/Hardware/Rids.md) challenge from HTB CyberApocalypse 2024. After a bit of waiting it would seem we downloaded a firmware image:  
 
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/b1615448-a4b0-4a35-bf40-89ee245059a7)
 
