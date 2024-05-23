@@ -1,4 +1,4 @@
-# BunnyPass
+# Rids
 
 ## Solution 
 
