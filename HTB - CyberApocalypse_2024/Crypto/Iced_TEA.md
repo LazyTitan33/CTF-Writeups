@@ -1,4 +1,4 @@
-# Primary Knowledge
+# Iced TEA
 
 ## Solution 
 For this challenge, we get an output.txt and source.py file.
