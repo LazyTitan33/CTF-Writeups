@@ -51,7 +51,9 @@ jedec_id = exchange([0x9F], 3)
 print(jedec_id)
 ```
 
-As we can see at the end it only looks for and prints out the `jedec_id`. But we wanted to see what more there is to read so we added these lines to the script:  
+As we can see at the end it only looks for and prints out the `jedec_id`. But we wanted to see what more data there is to read so we added these lines to the script. The 0x03 is figured out with the help of the instruction table in the datasheet of the [W25Q128](https://www.pjrc.com/teensy/W25Q128FV.pdf) Chip:  
+
+![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/ca3433c9-eac3-4bbe-b767-db3c39c221f3)
 
 ```python
 data = exchange([0x03, 0x00, 0x00, 0x00], 15000000)
