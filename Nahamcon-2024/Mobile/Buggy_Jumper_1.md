@@ -16,7 +16,7 @@ We are dealing with a Godot compiled code that we need to decompile.
 
 ## Solution
 
-I found [this](https://github.com/bruvzg/gdsdecomp/releases) great precompiled tool on github. I ran it and opened the `flag.gdc` and selected the lasted bytecode version from the drop down list:  
+I found [this](https://github.com/bruvzg/gdsdecomp/releases) great precompiled tool on github. I ran it and opened the `flag.gdc` and selected the latest bytecode version from the drop down list:  
 
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/d2be83f2-6b3f-4808-95c8-7fb6eaa55bef)
 
