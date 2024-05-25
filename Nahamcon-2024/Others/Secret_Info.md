@@ -16,4 +16,4 @@ Turns out that the same is valid for the challenge instance as well.
 
 `CTF{it_is_a_feature_by_core_xd}`
 
-Note: I didn't understand the point of this challenge. It felt lazy and a missed oppourtunity to do something with a potentially cool wordpress plugin.
+Note: I didn't understand the point of this challenge. It felt lazy and a missed opportunity to do something with a potentially cool wordpress plugin.
