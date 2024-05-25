@@ -14,6 +14,6 @@ Turns out that the same is valid for the challenge instance as well.
 
 ![image](https://github.com/LazyTitan33/CTF-Writeups/assets/80063008/2df5d203-0bfd-49fb-a549-46d19185dff3)
 
-`CTF{it_is_a_feature_by_cor_xd}`
+`CTF{it_is_a_feature_by_core_xd}`
 
 Note: I didn't understand the point of this challenge. It felt lazy and a missed oppourtunity to do something with a potentially cool wordpress plugin.
