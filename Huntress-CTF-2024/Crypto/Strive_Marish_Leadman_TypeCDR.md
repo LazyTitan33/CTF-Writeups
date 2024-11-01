@@ -1,0 +1,24 @@
+# Strive Marish Leadman TypeCDR
+
+![image](https://github.com/user-attachments/assets/a0b0a9fc-7d53-46d8-ab66-7668ebe55179)
+
+## My Solution
+
+When connecting to provided port, we get a few values:  
+
+![image](https://github.com/user-attachments/assets/b5938cd6-8ae1-4a7f-bd8c-e2baa88e4deb)
+
+I recognize these values as being arguments we can also pass to [RsaCtfTool](https://github.com/RsaCtfTool/RsaCtfTool) in order to try and decrypt the cipher text which is the last line:  
+
+```bash
+RsaCtfTool.py -p 0xf904109682c5189c88e5e2295bd20963e23d4ee35d1f8389f55b80da4df901fb065f68194b5c7b97e624ed7505daad7842948390ab07d71d2e398fc2ee94024b \
+-q 0xcbab3cc7863aeefff94c3f7118500d1bccddeefb55483d3670e21ef74d2c21b6a0e58320efc5f83d4270b98838fbf3e83d848bf9e9c8901f1c35a57b14a12ed3 \
+-d 0x8d97d5e60a238e9c40dd1ec167aba967d6bd80b67224587752b2818fd9d334017e79a16e3b8943ea6332a894d42205f33bd0c53cd00c538b269d125d593864e404769440cdb331250d7e1bd6e6b3c2e6bc798814f3edd9911f4b8ca58b73cd581829799ada0bc748002171a0525de9ae4ac1af79ef14c1f7fc4852a621aa4661 \
+-e 0x10001 \
+-n 0xc61cc9fd76d943e6b99cebbf7fdfe9b861cb65da69de90e01969ca3bb369d7a015a8fd769ad24e5f44ac5590500d15abf93377d517b44a753be6f3aee9b0536950005e80e4b018e227019b0ce435e73f5d153b968818affffa503a6e2e04e0400bedc9b71fee62a0566a1d0d451ff9fbbe0dbfa288a6df31c9a090d589925dd1 \
+--decrypt 0x2b9607c7ff6b58c671ec561d4a78f83f7e33c9e49fdf21856926d24b3a06fd495bdc158dde3447b261f6c876e7624ef28ed13ffd390b198305d0c039b53ef8136a6924040dce906f6ecdcd3318bf4fd77c186111c98d769152d056d5b89444d9188a00ad45e3532ab10aa866d5865232d3afcb8b77ed9421ab80e7e28cb53a1e
+```
+
+![image](https://github.com/user-attachments/assets/872f35c5-6159-4b11-a768-7b5aad2c1e53)
+
+`flag{cf614b15ac1dd461a2e48afdfe21b8e8}`
