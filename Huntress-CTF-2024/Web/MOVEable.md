@@ -2,7 +2,7 @@
 
 ![image](https://github.com/user-attachments/assets/ce4e478b-57f1-4eed-b612-2d9d3041c9b3)
 
-Download: [app.zip]((https://raw.githubusercontent.com/LazyTitan33/CTF-Writeups/refs/heads/main/Huntress-CTF-2024/challenge-files/app.zip)
+Download: [app.zip](https://raw.githubusercontent.com/LazyTitan33/CTF-Writeups/refs/heads/main/Huntress-CTF-2024/challenge-files/app.zip)
 
 ## My Solution
 
