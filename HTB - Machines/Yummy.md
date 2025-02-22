@@ -389,7 +389,7 @@ sudo /usr/bin/rsync -a --exclude=.hg /home/dev/app-production/ -e 'sh -c "sh 0<&
 ![image](https://i.imgur.com/7NzK2i9.png)
 
 > [!IMPORTANT]  
-> Well, I'm excited to say that I was proving wrong here. There's a brilliant workaround in this writeup where the `/opt/app/` is passed to a non-important flag: 
+> Well, I'm excited to say that I was proven wrong here. There's a brilliant workaround in this writeup where the `/opt/app/` is passed to a non-important flag: 
 > https://blog.ryuki.dev/ctf/htb/machines/season-6/yummy#method-3 
 
 <s>Although we are not able to use the -e flag to execute remote commands</s>, there are other flags that could be abused. Here are a few examples:
