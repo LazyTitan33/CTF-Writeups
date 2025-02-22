@@ -390,7 +390,7 @@ sudo /usr/bin/rsync -a --exclude=.hg /home/dev/app-production/ -e 'sh -c "sh 0<&
 
 Although we are not able to use the -e flag to execute remote commands, there are other flags that could be abused. Here are a few examples:
 
-## Example 1: using -files-from
+## Example 1: using --files-from
 
 The `--files-form` flag allows us to read a list of files from a given file. However, when the given file doesn't contain a list of files, the error is verbose showing the content of the file.  
 ![image](https://i.imgur.com/TSpokUE.png)
