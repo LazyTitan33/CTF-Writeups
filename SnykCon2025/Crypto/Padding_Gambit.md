@@ -102,7 +102,7 @@ function decrypt(base64UrlText) {
 }
 ```
 
-I used `padbuster` with the syntax below:  
+I used [padbuster](https://www.kali.org/tools/padbuster/) with the syntax below:  
 
 ```bash
 padbuster 'http://challenge.ctf.games:31769/api/submit/lIi37VwofxGcSudiwg9%2FDP8Lrj4B17suDcY8%2B6ojgxKQmbsw8biJxrxhG4kOK4wF' \
@@ -129,7 +129,7 @@ I recognize this as being FEN notation for chess which makes sense given the ima
 
 ![image](https://github.com/user-attachments/assets/cb3e896b-494c-4359-bdce-fb08b8270115)
 
-I stared at it for a while and then I got the idea to convert it to binary. Any ocuppied squares are 1 and any unoccupied ones are 0:
+I stared at it for a while and then I got the idea to convert it to binary. Any occupied squares are 1 and any unoccupied ones are 0:
 
 ```
 01111000 00101000 01000110 01110100 01000110 00110010 00110101 00101001
