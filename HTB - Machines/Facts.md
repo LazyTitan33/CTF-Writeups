@@ -268,6 +268,9 @@ uid=1000(trivia) gid=1000(trivia) groups=1000(trivia)
 
 Despite using the v2.9.0 CMS version which should have this vuln patched, it seems that, as far as I can tell, the developers only sanitized the input when using a local filesystem to host files. Since I'm using an AWS S3 bucket via localstack, the path traversal isn't sanitized and still works.
 
+>[!NOTE]
+>In the meantime, it seems someone reported it and got [CVE-2026-1776](https://github.com/advisories/GHSA-jw5g-f64p-6x78) assigned which is good that it's tracked and you can update your CMS.
+
 The flag can be taken by accessing this path after registering a new user, an admin level account is not required (despite the URL path indicating an admin endpoint) so the Mass Assignment is skipped.
 
 ```bash
@@ -397,6 +400,7 @@ sudo FACTERLIB=$TF facter
 sudo: sorry, you are not allowed to set the following environment variables: FACTERLIB
 ```
 
+> [!NOTE]
 > At the time of developing this box, GTFObins didn't have any mention of the --custom-dir attack vector. Now it does making this step a lot easier. Easier than I intended at least.
 
 This step requires a bit of research into the application and we can see that this allows you to run facts from a directory specified with the `--custom-dir` flag:   
