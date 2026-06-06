@@ -427,3 +427,23 @@ uid=0(root) gid=0(root) groups=0(root)
 ```
 
 I hope this easy box reinforced some good strategies for enumeration, highlights the need for attention to detail and also taught a few nifty tricks that I believe are worth remembering.
+
+# Flowchart
+
+```mermaid
+flowchart TD
+    A(Register new user on CAMALEON CMS) --> E((Path Traversal)) --> |Read SSH Key| F((Foothold)) --> G{Facter root privesc}
+    A --> B((Mass Assignment: 
+    CVE-2025-2304))
+    
+    subgraph S1 [ ]
+    direction LR
+    B --> C((Foothold via Ruby RCE))
+    B --> D((AWS Keys in Settings))
+    end
+    
+    style S1 fill:none,stroke:none
+    
+    C --> G
+    D --> |Find SSH Key on S3 bucket|F
+```
